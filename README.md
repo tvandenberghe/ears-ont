@@ -8,24 +8,78 @@
 
 **Installation**
 
-1. Install Java (jre-jdk) 8 or later.
-2. Install one database : 
+1. Install Java : Oracle Corporation (jre-jdk) 1.8.0_172-b11 or later.
+2. Install Tomcat 902 or later
+
+In Tomcat installation directory \webapps\manager\WEB-INF\web.xml   file
+
+Modified content  like 
+
+​    <multipart-config>
+
+​      <!-- 50MB max -->
+
+​      <max-file-size>52428800</max-file-size>
+
+​      <max-request-size>52428800</max-request-size>
+
+​      <file-size-threshold>0</file-size-threshold>
+
+​    </multipart-config>
+
+ 
+
+Replace by
+
+​    <multipart-config>
+
+​      <!-- 50MB max 
+
+​      <max-file-size>52428800</max-file-size>
+
+​      <max-request-size>52428800</max-request-size>
+
+​      <file-size-threshold>0</file-size-threshold>-->
+
+​              <max-file-size>92428800</max-file-size>
+
+​      <max-request-size>92428800</max-request-size>
+
+​      <file-size-threshold>0</file-size-threshold>
+
+​              
+
+​    </multipart-config>
+
+
+
+
+
+In Tomcat installation directory \conf\tomcat-users.xml file
+
+add 
+
+<role rolename="manager-gui"/>
+
+<user password="XYZ" roles="manager-gui" username="XYZ"/>
+
+1. Install one database : 
 
 - Oracle database XE  18c or later (connector :ojdbc8-12.2.0.1)
 
-Create User XY:
+Create User XYZ:
 
 -- USER SQL
-ALTER USER "XY"
+ALTER USER "XYZ"
 DEFAULT TABLESPACE "USERS"
 TEMPORARY TABLESPACE "TEMP"
 ACCOUNT UNLOCK ;
 
 -- QUOTAS
-ALTER USER "XY" QUOTA UNLIMITED ON "USERS";
+ALTER USER "XYZ" QUOTA UNLIMITED ON "USERS";
 
 -- ROLES
-ALTER USER "XY" DEFAULT ROLE "CONNECT","RESOURCE";
+ALTER USER "XYZ" DEFAULT ROLE "CONNECT","RESOURCE";
 
 -- SYSTEM PRIVILEGES
 
