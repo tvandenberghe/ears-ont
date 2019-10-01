@@ -15,7 +15,8 @@ In Tomcat installation directory \webapps\manager\WEB-INF\web.xml   file
 
 Modified content  like 
 
-​    <multipart-config>
+```
+   <multipart-config>
 
 ​      <!-- 50MB max -->
 
@@ -26,9 +27,11 @@ Modified content  like
 ​      <file-size-threshold>0</file-size-threshold>
 
 ​    </multipart-config>
+```
 
  
 
+```
 Replace by
 
 ​    <multipart-config>
@@ -50,6 +53,11 @@ Replace by
 ​              
 
 ​    </multipart-config>
+```
+
+
+
+
 
 
 
@@ -59,9 +67,13 @@ In Tomcat installation directory \conf\tomcat-users.xml file
 
 add 
 
+```
 <role rolename="manager-gui"/>
 
 <user password="XYZ" roles="manager-gui" username="XYZ"/>
+```
+
+
 
 1. Install one database : 
 
