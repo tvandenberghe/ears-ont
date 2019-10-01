@@ -104,6 +104,16 @@ ALTER USER casino DEFAULT ROLE "CONNECT","RESOURCE";
 
 -- SYSTEM PRIVILEGES
 
+
+
+Process DDL script:
+
+https://github.com/tvandenberghe/ears/blob/master/databaseScript/exportCasinoForOracleDatabase.sql
+
+  
+
+
+
 - MySQL Server 8.0.16 or later (connector :mysql-connector-java -8.0.11 )
 - MariaDB 10.4.8 or later (connector: mariadb243 -2.4.3)
 - Sql Server 2017 Express  or later (connector: mssql-jdbc - 7.4.1.jre11 )
